@@ -2,7 +2,7 @@ In `../../test__exercise_01_threads.cc`, what do you think it will output when r
 --> The first cout statement on L:17 will output first, the threads (t_1,t_2,t_3) will output next, followed by the final cout statement on L:25. 
 
 Does the output match your expectations?
---> The output didn't match my initial expectations! There are 100 t_1 outputs (a), somes followed by t_2 (b), sometimes c or b are mixed in. 
+--> The output didn't match my initial expectations! There are 100 t_1 outputs (a), sometimes followed by t_2 (b), sometimes c or b are mixed in. 
 
 What do you notice?
 --> The output is all over the place and definately not following the events outlined by the code. In some executions, it doesn't even follow the t_1 (a) -> t_2 (b) -> t_3 (c) order. 
