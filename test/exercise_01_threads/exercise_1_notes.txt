@@ -5,18 +5,20 @@ Does the output match your expectations?
 --> The output didn't match my initial expectations! There are 100 t_1 outputs (a), sometimes followed by t_2 (b), sometimes c or b are mixed in. 
 
 What do you notice?
---> The output is all over the place and definately not following the events outlined by the code. In some executions, it doesn't even follow the t_1 (a) -> t_2 (b) -> t_3 (c) order. 
+--> The output is all over the place and definitely not following the events outlined by the code. In some executions, it doesn't even follow the t_1 (a) -> t_2 (b) -> t_3 (c) order. 
 
 When execution reaches `LINE A`, how many threads are running?
-
+--> To my knowledge, all three threads are running by the time the program reaches 'LINE A', since the letters print out to the terminal and L:15 executes. 
 
 Comment out one of the `join()` lines, recompile, and rerun the program.  What happened?  
+--> The program still runs but outputs a fatal error condition. 
 
 Why?  
-
+--> `.join()` tells the program to block the thread it's called on and wait for `print_letter()` to finish its execution. When a `thread.join()` is commented out, the program essentially doesn't have anything to synchronize with and immediately aborts the execution. 
 
 Run ls in the `./build` directory.  What are those new files?
-
+--> The extra files are core dumps that show what happened in the computer's memory when the program crashed and spit out an error.  
 
 Assuming that we don’t care about the exact ordering of the letters, are there any problems with this code?
+--> Syntactically, I don't see anything wrong with the code. The weird ordering of the letters in the output was the biggest issue I saw initially and I think it's because the program concurrently calls multiple threads on the same method, creating a data race and causing all of the undefined behavior I saw in the terminal when compiling & running the program. 
 
