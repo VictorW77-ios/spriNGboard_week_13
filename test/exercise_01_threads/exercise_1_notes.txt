@@ -1,0 +1,21 @@
+##`../../test__exercise_01_threads.cc`, what do you think it will output when run?
+
+
+##Does the output match your expectations?
+
+##What do you notice?
+
+
+##When execution reaches `LINE A`, how many threads are running?
+
+
+##Comment out one of the `join()` lines, recompile, and rerun the program.  What happened?  
+
+##Why?  
+
+
+##Run ls in the `./build` directory.  What are those new files?
+
+
+##Assuming that we don’t care about the exact ordering of the letters, are there any problems with this code?
+
