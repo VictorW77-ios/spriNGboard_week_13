@@ -1,0 +1,26 @@
+Why are counter and counter_mutex being passed by reference to the threads?
+
+
+How long (approximately) will it take the test to run?  Will it pass?
+
+
+Do the outputs and times match your previous expectations?
+
+
+
+Rebuild and rerun the code.  Does the test pass?
+
+How long does it take to run?
+
+
+
+Recompile and rerun the code.  Does the test pass?  
+
+How long does it take to run?  
+
+
+What does this say about which code should be inside critical sections?
+
+
+
+
