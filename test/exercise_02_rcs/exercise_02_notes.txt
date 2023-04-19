@@ -8,7 +8,7 @@ Will it pass?
 --> Unsure about this! I think it will pass but I'm hesistant because the test case requires the counter == 3*num_times and I'm not sure how this'll translate with the exec running 3 threads separately at O(num_times), unless this issue is fixed by passing by reference and the counter's value ends up being 3*num_times. 
 
 Do the outputs and times match your previous expectations?
-
+--> Nope, but my expectations were somewhat correct. The test cases failed because the counter =/= 3*num_times. The times are interesting because the real time (0m1.077s) is higher than the user time (0m0.022s). Not to mention the sys time being 0m000s. 
 
 Rebuild and rerun the code.  Does the test pass?
 
