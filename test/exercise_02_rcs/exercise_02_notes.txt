@@ -11,10 +11,10 @@ Do the outputs and times match your previous expectations?
 --> Nope, but my expectations were somewhat correct. The test cases failed because the counter =/= 3*num_times. The times are interesting because the real time (0m1.077s) is higher than the user time (0m0.022s). Not to mention the sys time being 0m000s. 
 
 Rebuild and rerun the code.  Does the test pass?
+--> Yes, after implementing a lock_guard in the for loop the program runs and passes all test cases. 
 
 How long does it take to run?
-
-
+--> It takes 0m3.227s to run
 
 Recompile and rerun the code.  Does the test pass?  
 
