@@ -1,11 +1,13 @@
 Why are counter and counter_mutex being passed by reference to the threads?
-
+--> 'counter' and 'counter_mutex' are passed by ref because we want the program to modify the containers as they're being incremented. 
 
 How long (approximately) will it take the test to run?  Will it pass?
+--> The program should run in O(3*N) time for all 3 threads, where N < num_times (num_times = 1,000) + 1ms, given the sleep() func. 
 
+Will it pass?
+--> Unsure about this! I think it will pass but I'm hesistant because the test case requires the counter == 3*num_times and I'm not sure how this'll translate with the exec running 3 threads separately at O(num_times), unless this issue is fixed by passing by reference and the counter's value ends up being 3*num_times. 
 
 Do the outputs and times match your previous expectations?
-
 
 
 Rebuild and rerun the code.  Does the test pass?
