@@ -18,12 +18,13 @@ How long does it take to run?
 
 Recompile and rerun the code.  Does the test pass?  
 --> The program compiled but the test cases failed because the program didn't properly increment the counter (REQUIRE (counter == 3 * num_times)). 
+--> I also tried commenting out the for-loop and simply initialized the lock_guard and increment operation, which compiled but failed the test case as well.  
 
 How long does it take to run?  
 --> The real time was 0m1.075s 
 
 What does this say about which code should be inside critical sections?
--->
+--> 
 
 
 
