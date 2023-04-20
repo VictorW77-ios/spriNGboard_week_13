@@ -17,12 +17,13 @@ How long does it take to run?
 --> It takes 0m3.227s to run
 
 Recompile and rerun the code.  Does the test pass?  
+--> The program compiled but the test cases failed because the program didn't properly increment the counter (REQUIRE (counter == 3 * num_times)). 
 
 How long does it take to run?  
-
+--> The real time was 0m1.075s 
 
 What does this say about which code should be inside critical sections?
-
+-->
 
 
 
