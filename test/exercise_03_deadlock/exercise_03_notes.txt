@@ -1,0 +1,12 @@
+Are there any concurrency issues in this code?
+
+
+From the ./build directory, run:
+	./test/exercise_03_deadlock/test__exercise_03_deadlock
+What happens?  
+
+Why?
+
+
+Fix the code.
+

@@ -17,14 +17,12 @@ How long does it take to run?
 --> It takes 0m3.227s to run
 
 Recompile and rerun the code.  Does the test pass?  
---> The program compiled but the test cases failed because the program didn't properly increment the counter (REQUIRE (counter == 3 * num_times)). 
---> I also tried commenting out the for-loop and simply initialized the lock_guard and increment operation, which compiled but failed the test case as well.  
---> The test cases also fail if the lock_guard is in scope but the counter is outside of the same scope. (real time = 0m3.274s)
+--> The program compiled and the test case passed (I orignally didn't have the lock_guard and increment operation properly isolated in their local scope but fixed it).
 
 How long does it take to run?  
---> The real time was 0m1.075s 
+--> The real time was 0m1.079s. Substantially faster than before. 
 
 What does this say about which code should be inside critical sections?
---> The lock_guard and increment operation should be in the scope of the for-loop and are critical to the program functioning correctly. From the Sunday session and what I've read so far (cppreference - std::lock_guard), the scope really matters because when control leaves the scope of the lock_guard, the mutex is released and the lock_guard is destructed - so it's important to declare the lock_guard exactly in the scope where we need the mutex to be protected. 
+--> The lock_guard and increment operation are the most critical parts of the program functioning correctly. From the Sunday session and what I've read so far (cppreference - std::lock_guard), the scope really matters because lock_guard implements a mutex wrapper based on scope. By placing the critical stuff inside it's own block, we restrict the scope of the lock_guard and remove it from other uncritical behavior in the function. When control leaves the scope of the lock_guard, the mutex is released and the lock_guard is destructed (w/ unlock() ) - so it's important to declare the lock_guard in a scope that allows us to protect the mutex for however long we need to. 
 
 
