@@ -1,5 +1,5 @@
 Are there any concurrency issues in this code?
---> Yes, both functions (increment_counter_ver_1 & increment_counter_ver_2) essentially do the same thing and lock the same mutexes. I also don't think they're being passed the right mutexes either (mutex_a vs mutex_x?)
+--> Yes, both functions (increment_counter_ver_1 & increment_counter_ver_2) essentially do the same thing and lock the same mutexes.
 
 From the ./build directory, run:
 	./test/exercise_03_deadlock/test__exercise_03_deadlock
@@ -9,4 +9,5 @@ Why?
 --> The functions are locking the same mutexes, so ver_2 has to wait for ver_1 to unlock and release the mutexes to it. This causes the program to stall because it can't move forward (deadlock). 
 
 Fix the code.
+--> I commented out the second function and initialized t_2 to increment_counter_ver_1(). The program now passes all test cases. (real time 0m1.078s)
 
