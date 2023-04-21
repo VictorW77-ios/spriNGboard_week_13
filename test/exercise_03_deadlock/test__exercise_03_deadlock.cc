@@ -18,7 +18,7 @@ void increment_counter_ver_1 (size_t & counter, std::mutex & mutex_a, std::mutex
     }
   }
 }
-
+/*
 void increment_counter_ver_2 (size_t & counter, std::mutex & mutex_a, std::mutex & mutex_b, size_t num_times)
 {
   for (size_t idx=0; idx<num_times; ++idx) {
@@ -30,7 +30,7 @@ void increment_counter_ver_2 (size_t & counter, std::mutex & mutex_a, std::mutex
     }
   }
 }
-
+*/
 TEST_CASE("deadlock example")
 {
   size_t const num_times   = 1'000;
@@ -39,7 +39,7 @@ TEST_CASE("deadlock example")
   std::mutex   mutex_y;
 
   std::thread t_1(increment_counter_ver_1, std::ref(counter), std::ref(mutex_x), std::ref(mutex_y), num_times);
-  std::thread t_2(increment_counter_ver_2, std::ref(counter), std::ref(mutex_x), std::ref(mutex_y), num_times);
+ std::thread t_2(increment_counter_ver_1, std::ref(counter), std::ref(mutex_x), std::ref(mutex_y), num_times);
   t_1.join();
   t_2.join();
 

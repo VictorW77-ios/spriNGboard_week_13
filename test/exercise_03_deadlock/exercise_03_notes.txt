@@ -6,7 +6,7 @@ From the ./build directory, run:
 What happens?  
 --> The program stalls and the test cases fail. 
 Why?
---> The functions are locking the same mutexes, so ver_2 has to wait for ver_1 to unlock and release the mutexes to it. This causes the program to stall because it can't move forward. 
+--> The functions are locking the same mutexes, so ver_2 has to wait for ver_1 to unlock and release the mutexes to it. This causes the program to stall because it can't move forward (deadlock). 
 
 Fix the code.
 
